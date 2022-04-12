@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+       tablice();
+        parzyste();
+        wariancja();
+    }
+    public static void tablice()
+    {
+        int []punkty={5,3,4,1,2};
+        double suma=0,suma1=0,srednia;
+        for(int i=0;i< punkty.length;i++)
+        {
+            suma=suma+punkty[i];
+        }
+
+        for(int i:punkty)
+        {
+           suma1=suma1+i;
+        }
+        srednia=suma/punkty.length;
+        double srednia1=suma1/punkty.length;
+        System.out.println("suma: "+suma+" srednia: "+srednia);
+        System.out.println("suma: "+suma1+" srednia: "+srednia1);
+
+        //System.out.println(suma1);
+    }
+        public static  void parzyste()
+        {
+            Scanner scanner=new Scanner(System.in);
+            boolean [] tab = new boolean[20];
+            for(int i=0;i<tab.length;i++)
+            {
+                if(i%2==0)
+                {
+                    tab[i]=true;
+                    System.out.println(tab[i]);
+                }
+                else
+                {
+                    tab[i]=false;
+                    System.out.println(tab[i]);
+
+                }
+            }
+
+        }
+    public static void wariancja()
+    {
+        double[] tab={-2,10,1};
+        double srednia,suma=0,gora=-0,wariancja;
+
+        for(int i=0;i<tab.length;i++)
+        {
+            suma=suma+tab[i];
+        }
+        srednia=suma/tab.length;
+
+        for(int i=0;i<tab.length;i++)
+        {
+            gora=gora+((tab[i]-srednia)*(tab[i]-srednia));
+        }
+        wariancja=gora/tab.length;
+        System.out.println(wariancja);
+    }
+
+}
